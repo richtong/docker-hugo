@@ -55,7 +55,7 @@ if [[ $prompt =~ ^[yY] ]]
 then
   # git: commit, tag, push
   git add Dockerfile && \
-    git commit -m "version $VERSION" && git tag "$VERSION" && git push && git push --tags
+    git commit -m "version $VERSION" && git tag -f "$VERSION" && git push && git push --tags
   # open hub.docker.com
   "$OPEN" "https://hub.docker.com/r/$DOCKER_ORG/hugo/builds/" > /dev/null
   "$OPEN" "https://hub.docker.com/r/$DOCKER_ORG/hugo/~/settings/automated-builds/" > /dev/null
